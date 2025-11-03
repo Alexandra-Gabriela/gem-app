@@ -1,4 +1,3 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -8,90 +7,56 @@
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #fffaf3;
-  color: #5a3e2b;
+  color: #4b2e05;
 }
 
-/* NAVBAR */
+/* Navbar */
 .navbar {
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  padding: 15px 0;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
-.nav-container {
-  width: 90%;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
+.navbar .logo {
   font-family: 'Dancing Script', cursive;
   font-size: 2rem;
   color: #d2691e;
 }
 
-.nav-links {
+.navbar ul {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 25px;
 }
 
-.nav-links a {
+.navbar a {
   text-decoration: none;
-  color: #5a3e2b;
+  color: #4b2e05;
   font-weight: 500;
-  transition: 0.3s;
 }
 
-.nav-links a:hover {
+.navbar a:hover {
   color: #d2691e;
 }
 
-.icons {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  font-size: 1.2rem;
-  color: #5a3e2b;
-}
-
-.cart-icon {
-  position: relative;
-}
-
-.cart-count {
-  position: absolute;
-  top: -8px;
-  right: -10px;
-  background: #d62828;
-  color: #fff;
-  font-size: 0.7rem;
-  font-weight: bold;
-  border-radius: 50%;
-  width: 18px;
-  height: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* HERO */
+/* Hero */
 .hero {
   background: url('https://images.unsplash.com/photo-1565958011705-44e211b7e20c?w=1600') center/cover no-repeat;
-  color: white;
   text-align: center;
+  color: white;
   padding: 100px 20px;
 }
 
 .hero h1 {
   font-family: 'Dancing Script', cursive;
   font-size: 3rem;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .hero p {
@@ -102,35 +67,41 @@ body {
 .btn {
   background: #d2691e;
   color: white;
-  padding: 12px 25px;
-  border-radius: 50px;
+  padding: 10px 25px;
+  border-radius: 30px;
   text-decoration: none;
   transition: 0.3s;
 }
 
 .btn:hover {
-  background: #b35714;
+  background: #a0522d;
 }
 
-/* PRODUSE */
+/* Produse */
 .produse {
-  padding: 60px 10%;
   text-align: center;
+  padding: 60px 10%;
+}
+
+.produse h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  color: #8b4513;
+  margin-bottom: 40px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
-  margin-top: 40px;
 }
 
 .card {
-  background: #fff;
+  background: white;
   border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
+  transition: 0.3s;
 }
 
 .card:hover {
@@ -145,45 +116,43 @@ body {
 
 .card h3 {
   font-size: 1.3rem;
-  margin-top: 10px;
+  margin: 10px 0;
   color: #8b4513;
 }
 
 .card p {
-  font-size: 0.95rem;
   color: #555;
-  margin: 10px 15px;
+  font-size: 0.95rem;
+  margin: 0 10px 10px;
 }
 
 .pret {
   display: block;
-  margin: 10px 0;
-  color: #d2691e;
   font-weight: bold;
-  font-size: 1.2rem;
+  color: #d2691e;
+  margin-bottom: 10px;
 }
 
 .btn-card {
-  width: 100%;
-  border: none;
   background: #228b22;
   color: white;
-  padding: 10px 0;
+  border: none;
+  padding: 12px;
+  width: 100%;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   cursor: pointer;
-  transition: 0.3s;
 }
 
 .btn-card:hover {
-  background: #1b6b1b;
+  background: #1a6e1a;
 }
 
-/* FOOTER */
+/* Footer */
 footer {
   background: #8b4513;
   color: white;
   text-align: center;
-  padding: 20px;
-  margin-top: 50px;
+  padding: 20px 0;
+  margin-top: 60px;
 }
