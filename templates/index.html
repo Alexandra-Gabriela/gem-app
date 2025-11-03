@@ -8,20 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Antet -->
-    <header>
-        <div class="container">
-            <div class="logo"><!DOCTYPE html>
-<html lang="ro">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gemuri de la Bunica Maria</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Navbar -->
+
+    <!-- NAVBAR -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">🍓 Bunica Maria</div>
@@ -33,109 +21,55 @@
             </ul>
             <div class="icons">
                 <i class="fa fa-search"></i>
-                <i class="fa fa-shopping-cart"></i>
+                <div class="cart-icon">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Banner mare -->
-    <section class="banner">
-        <div class="overlay">
-            <h1>Gemuri făcute cu drag, ca pe vremuri</h1>
-            <p>Fără conservanți, doar fructe din grădina bunicii 🍇🍑🍒</p>
-            <a href="#produse" class="btn">Vezi produsele</a>
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Gemuri de la Bunica Maria</h1>
+        <p>Făcute cu drag, ca acum 50 de ani 💕</p>
+        <a href="#produse" class="btn">Vezi gemurile</a>
+    </section>
+
+    <!-- PRODUSE -->
+    <section id="produse" class="produse">
+        <h2>Gemurile noastre</h2>
+        <div class="grid">
+            {% for produs in produse %}
+            <div class="card">
+                <img src="{{ produs.imagine }}" alt="{{ produs.nume }}">
+                <h3>{{ produs.nume }}</h3>
+                <p>{{ produs.descriere }}</p>
+                <span class="pret">{{ produs.pret }} lei</span>
+                <button class="btn-card">Adaugă în coș</button>
+            </div>
+            {% endfor %}
         </div>
     </section>
 
-    <!-- Secțiune principală -->
-    <main class="main-container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <button class="reset-btn">Resetează filtre</button>
-            <h3>Categorii</h3>
-            <ul>
-                <li><a href="#">Gemuri de fructe</a></li>
-                <li><a href="#">Dulcețuri</a></li>
-                <li><a href="#">Produse noi</a></li>
-                <li><a href="#">Cele mai vândute</a></li>
-            </ul>
-        </aside>
-
-        <!-- Produse -->
-        <section id="produse" class="produse">
-            <div class="produse-header">
-                <h2>Gemurile noastre</h2>
-                <select class="sortare">
-                    <option>Sortează după: Cele mai populare</option>
-                    <option>Preț crescător</option>
-                    <option>Preț descrescător</option>
-                </select>
-            </div>
-            <div class="grid">
-                {% for produs in produse %}
-                <div class="card">
-                    <img src="{{ produs.imagine }}" alt="{{ produs.nume }}" loading="lazy">
-                    <div class="card-body">
-                        <h3>{{ produs.nume }}</h3>
-                        <p>{{ produs.descriere }}</p>
-                        <div class="pret">{{ produs.pret }} lei</div>
-                        <button class="btn-card">Adaugă în coș</button>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer>
         <p>&copy; 2025 Gemuri de la Bunica Maria | contact@bunicamaria.ro</p>
     </footer>
 
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</body>
-</html>
-
-                <img src="https://stock.adobe.com/search?k=granny+logo" alt="Bunica Maria">
-                <h1>Gemuri de la <span>Bunica Maria</span></h1>
-            </div>
-            <p class="slogan">Făcute cu drag, ca acum 50 de ani</p>
-        </div>
-    </header>
-
-    <!-- Hero -->
-    <section class="hero">
-        <div class="container">
-            <h2>Bine ai venit în căsuța noastră cu gemuri!</h2>
-            <p>Toate gemurile sunt făcute manual, din fructe din grădină, fără conservanți.</p>
-            <a href="#produse" class="btn">Vezi gemurile</a>
-        </div>
-    </section>
-
-    <!-- Produse -->
-    <section id="produse" class="produse">
-        <div class="container">
-            <h2>Gemurile noastre</h2>
-            <div class="grid">
-                {% for produs in produse %}
-                <div class="card">
-                    <img src="{{ produs.imagine }}" alt="{{ produs.nume }}" loading="lazy">
-                    <h3>{{ produs.nume }}</h3>
-                    <p>{{ produs.descriere }}</p>
-                    <div class="pret">{{ produs.pret }} lei</div>
-                    <button class="btn-card">Adaugă în coș</button>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>Telefon: 0722 123 456 | Email: contact@bunicamaria.ro</p>
-            <p>&copy; 2025 Gemuri de la Bunica Maria. Cu drag din satul Valea Florilor.</p>
-        </div>
-    </footer>
+    <script>
+        // Simulare coș
+        let count = 0;
+        const cartCount = document.getElementById('cartCount');
+        document.querySelectorAll('.btn-card').forEach(btn => {
+            btn.addEventListener('click', () => {
+                count++;
+                cartCount.textContent = count;
+                cartCount.classList.add('bump');
+                setTimeout(() => cartCount.classList.remove('bump'), 300);
+            });
+        });
+    </script>
 </body>
 </html>
