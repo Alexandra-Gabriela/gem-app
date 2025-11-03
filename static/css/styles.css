@@ -1,0 +1,201 @@
+/* Reset & Fonturi */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #fffaf0;
+    color: #5d4037;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Dancing Script', cursive;
+    color: #8B4513;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Antet */
+header {
+    background: #FFE4B5;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.logo img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid #D2691E;
+    object-fit: cover;
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.logo span {
+    color: #D2691E;
+}
+
+.slogan {
+    font-style: italic;
+    color: #8B4513;
+    margin-top: 5px;
+    font-size: 1.1rem;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(rgba(255, 228, 181, 0.9), rgba(255, 228, 181, 0.9)),
+                url('https://images.unsplash.com/photo-1586864394295-1c3d3ccd3f6d?w=1200') center/cover no-repeat;
+    color: #5d4037;
+    text-align: center;
+    padding: 80px 20px;
+    margin: 30px 0;
+    border-radius: 15px;
+}
+
+.hero h2 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 25px;
+}
+
+.btn {
+    background: #D2691E;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #A0522D;
+    transform: scale(1.05);
+}
+
+/* Produse */
+.produse {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.produse h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin: 15px 0 8px;
+}
+
+.card p {
+    padding: 0 15px;
+    font-size: 0.95rem;
+    color: #777;
+}
+
+.pret {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #D2691E;
+    margin: 10px 0;
+}
+
+.btn-card {
+    background: #228B22;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    font-size: 1rem;
+    cursor: pointer;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    transition: 0.3s;
+}
+
+.btn-card:hover {
+    background: #1e6b1e;
+}
+
+/* Footer */
+footer {
+    background: #8B4513;
+    color: #fff;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Responsiv */
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 2rem;
+    }
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+}
