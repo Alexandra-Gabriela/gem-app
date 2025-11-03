@@ -11,7 +11,91 @@
     <!-- Antet -->
     <header>
         <div class="container">
-            <div class="logo">
+            <div class="logo"><!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemuri de la Bunica Maria</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🍓 Bunica Maria</div>
+            <ul class="nav-links">
+                <li><a href="#">Acasă</a></li>
+                <li><a href="#produse">Produse</a></li>
+                <li><a href="#">Despre noi</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="icons">
+                <i class="fa fa-search"></i>
+                <i class="fa fa-shopping-cart"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner mare -->
+    <section class="banner">
+        <div class="overlay">
+            <h1>Gemuri făcute cu drag, ca pe vremuri</h1>
+            <p>Fără conservanți, doar fructe din grădina bunicii 🍇🍑🍒</p>
+            <a href="#produse" class="btn">Vezi produsele</a>
+        </div>
+    </section>
+
+    <!-- Secțiune principală -->
+    <main class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <button class="reset-btn">Resetează filtre</button>
+            <h3>Categorii</h3>
+            <ul>
+                <li><a href="#">Gemuri de fructe</a></li>
+                <li><a href="#">Dulcețuri</a></li>
+                <li><a href="#">Produse noi</a></li>
+                <li><a href="#">Cele mai vândute</a></li>
+            </ul>
+        </aside>
+
+        <!-- Produse -->
+        <section id="produse" class="produse">
+            <div class="produse-header">
+                <h2>Gemurile noastre</h2>
+                <select class="sortare">
+                    <option>Sortează după: Cele mai populare</option>
+                    <option>Preț crescător</option>
+                    <option>Preț descrescător</option>
+                </select>
+            </div>
+            <div class="grid">
+                {% for produs in produse %}
+                <div class="card">
+                    <img src="{{ produs.imagine }}" alt="{{ produs.nume }}" loading="lazy">
+                    <div class="card-body">
+                        <h3>{{ produs.nume }}</h3>
+                        <p>{{ produs.descriere }}</p>
+                        <div class="pret">{{ produs.pret }} lei</div>
+                        <button class="btn-card">Adaugă în coș</button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Gemuri de la Bunica Maria | contact@bunicamaria.ro</p>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
+
                 <img src="https://stock.adobe.com/search?k=granny+logo" alt="Bunica Maria">
                 <h1>Gemuri de la <span>Bunica Maria</span></h1>
             </div>
